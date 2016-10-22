@@ -1,2 +1,2 @@
 # drone-rails
-docker app for rails
+docker image for rails
