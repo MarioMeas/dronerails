@@ -1,2 +1,2 @@
-# nn_docker
-Dockerizing environments for NN
+# drone-rails
+docker app for rails
