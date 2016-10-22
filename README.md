@@ -1,2 +1,2 @@
 # drone-rails
-docker image for rails, version 0.1
+Drone plugin for Rails testing.
