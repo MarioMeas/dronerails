@@ -3,7 +3,7 @@ FROM ruby:2.3.1
 MAINTAINER Steven Bateman <batemanwork@gmail.com>
 
 ENV HOME /home/rails/webapp
-ENV DEPENDS build-essential nodejs
+ENV DEPENDS build-essential nodejs iceweasel xvfb
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install dependencies
