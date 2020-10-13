@@ -1,6 +1,6 @@
 # Base image
-FROM ruby:2.3.1
-MAINTAINER Steven Bateman <batemanwork@gmail.com>
+FROM ruby:2.4.2
+MAINTAINER Mario Meas <mariomeas@gmail.com>
 
 ENV HOME /home/rails/webapp
 ENV DEPENDS build-essential nodejs iceweasel xvfb
