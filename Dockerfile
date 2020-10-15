@@ -21,6 +21,8 @@ CMD (service xvfb start; export DISPLAY=:10)
 
 # Copy bootstrap gemfile
 RUN gem install bundler -v 2.1.4
+ENV BUNDLER_VERSION='2.1.4'
+RUN gem install bundler --no-document -v '2.1.4'
 WORKDIR $HOME
 ADD Gemfile $HOME/Gemfile
 ADD Gemfile.lock $HOME/Gemfile.lock
