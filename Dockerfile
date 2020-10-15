@@ -20,6 +20,7 @@ RUN update-rc.d xvfb defaults
 CMD (service xvfb start; export DISPLAY=:10)
 
 # Copy bootstrap gemfile
+RUN gem update bundler
 #WORKDIR $HOME
 #ADD Gemfile $HOME/Gemfile
 #ADD Gemfile.lock $HOME/Gemfile.lock
