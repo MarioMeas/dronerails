@@ -9,8 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update -qq \
     && apt-get install -y $DEPENDS \
-#    && apt-get install sqlite3 \
-#    && apt-get install libsqlite3-dev \
+    && apt-get install sqlite3 -y \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
