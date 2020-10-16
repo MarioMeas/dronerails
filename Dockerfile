@@ -27,8 +27,8 @@ CMD (service xvfb start; export DISPLAY=:10)
 #RUN gem install bundler --no-document -v '2.1.4'
 WORKDIR $HOME
 ADD Gemfile $HOME/Gemfile
-RUN cat $HOME/Gemfile
+RUN cat /home/rails/webapp/Gemfile
 RUN pwd
 ADD Gemfile.lock $HOME/Gemfile.lock
-RUN cat $HOME/Gemfile.lock
+RUN cat /home/rails/webapp/Gemfile.lock
 RUN bundle install
