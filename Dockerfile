@@ -29,4 +29,5 @@ WORKDIR $HOME
 ADD Gemfile $HOME/Gemfile
 RUN cat $HOME/Gemfile
 ADD Gemfile.lock $HOME/Gemfile.lock
+RUN cat $HOME/Gemfile.lock
 RUN bundle install
