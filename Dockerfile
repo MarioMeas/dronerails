@@ -28,6 +28,7 @@ CMD (service xvfb start; export DISPLAY=:10)
 WORKDIR $HOME
 ADD Gemfile $HOME/Gemfile
 RUN cat $HOME/Gemfile
+RUN pwd
 ADD Gemfile.lock $HOME/Gemfile.lock
 RUN cat $HOME/Gemfile.lock
 RUN bundle install
