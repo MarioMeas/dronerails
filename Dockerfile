@@ -10,6 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq \
     && apt-get install -y $DEPENDS \
     && apt-get install sqlite3 -y \
+    && apt-get install libsqlite3-dev -y \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -21,7 +22,7 @@ RUN update-rc.d xvfb defaults
 CMD (service xvfb start; export DISPLAY=:10)
 
 # Copy bootstrap gemfile
-RUN gem install sqlite3 -v 1.3.13
+# RUN gem install sqlite3 -v 1.3.13
 #ENV BUNDLER_VERSION='2.1.4'
 #RUN gem install bundler --no-document -v '2.1.4'
 WORKDIR $HOME
