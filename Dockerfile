@@ -9,8 +9,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install dependencies
 RUN apt-get update -qq \
     && apt-get install -y $DEPENDS \
-    && apt-get install sqlite3 -y \
-    && apt-get install libsqlite3-dev -y \
+ #   && apt-get install sqlite3 -y \
+  #  && apt-get install libsqlite3-dev -y \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -25,7 +25,8 @@ CMD (service xvfb start; export DISPLAY=:10)
 #RUN gem install sqlite3 -v 1.3.13
 #ENV BUNDLER_VERSION='2.1.4'
 #RUN gem install bundler --no-document -v '2.1.4'
-#WORKDIR $HOME
-#ADD Gemfile $HOME/Gemfile
-#ADD Gemfile.lock $HOME/Gemfile.lock
-#RUN bundle install
+WORKDIR $HOME
+ADD Gemfile $HOME/Gemfile
+RUN cat $HOME/Gemfile
+ADD Gemfile.lock $HOME/Gemfile.lock
+RUN bundle install
