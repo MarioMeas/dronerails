@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
 # Use actionpack for rails 5.1
@@ -10,7 +16,7 @@ gem 'coerce', '~> 0.0.3'
 # Use chronic for coerce
 gem 'chronic', '>= 0.6.2'
 # Use simplecov for chronic
-gem 'simplecov', '0.10.0'
+gem 'simplecov', '< 0.19'
 # Use fattr for sekrets
 gem 'fattr', '~> 2.3.0'
 # Use highline for sekrets
@@ -22,7 +28,7 @@ gem 'arrayfields', '>= 4.7.4', '~> 4.7'
 # Use map for sekrets
 gem 'map', '~> 6.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '< 1.4'
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.9'
 # Use SCSS for stylesheets
@@ -55,8 +61,7 @@ gem 'rest-client', '~> 2.0'
 # Running process in multiple threads
 gem 'parallel', '~> 1.10'
 # Running tests
-#gem 'rake', '~> 11.3.0'
-gem 'rake', '12.3.1'
+gem 'rake', '~> 11.3.0'
 # application bootup, plugins, generators, and rake tasks
 gem 'railties', '~> 5.1.0'
 # Use activesupport for railties
